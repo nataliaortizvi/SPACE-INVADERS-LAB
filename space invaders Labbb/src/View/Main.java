@@ -9,7 +9,7 @@ public class Main extends PApplet {
 		PApplet.main("View.Main");
 	}
 	public void settings () {
-		size (500, 500);
+		size (700, 700);
 		
 	}
 	
