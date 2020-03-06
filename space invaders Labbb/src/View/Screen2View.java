@@ -20,9 +20,5 @@ public class Screen2View {
 	public void inicioTecla() {
 		controlador.tecla();
 	}
-	public void inicioRaton() {
-		controlador.raton();
-	}
-	
 
 }

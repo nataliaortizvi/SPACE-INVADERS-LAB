@@ -14,16 +14,10 @@ public class Screen2Controller {
 	}
 	
 	public void iniciar() {
-		logicaJuego.ejecutar();
+		logicaJuego.ejecutarJuego();
 	}
 	
 	public void tecla() {
 		logicaJuego.key();
 	}
-	public void raton() {
-		logicaJuego.mouse();
-	}
-	
-	
-
 }
