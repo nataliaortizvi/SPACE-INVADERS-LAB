@@ -11,23 +11,26 @@ public class Bala {
 	
 	public Bala(int x, int y, PApplet app) {
 		this.x = x;
-		this.x = x;
+		this.y = y;
 		this.tam = 50;
-		this.vel = 6;
+		this.vel = 5;
 		this.app = app;
 	}
 	
-	public void Pintar() {
+	public void pintar() {
+		disparar();
+	}
+	
+	public void disparar () {
 		app.fill(35,100,330);
 		app.ellipse(this.x, this.y, this.tam, this.tam);
+		this.y -= this.vel;
 	}
+	
+	
 	
 	
 	//getters and setters
-	public void mover () {
-		this.x -= this.vel;
-	}
-
 	public int getX() {
 		return x;
 	}

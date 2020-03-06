@@ -13,22 +13,24 @@ public class Enemigo {
 		this.posX = posX;
 		this.posY = posY;
 		this.tam = 50;
-		this.vel = 3;
+		this.vel = 5;
 		this.app = app;
 	}
 	
-	public void Pintar() {
+	public void pintar() {
 		app.fill(35,100,330);
 		app.rect(this.posX, this.posY, this.tam, this.tam);
 	}
 	
-	public void mover () {
+	public void mover() {
 		this.posX += this.vel;
 		
 		if(this.posX >= 650) {
 			this.posY += 1;
+			this.vel *= -1;
 		}else if(this.posX <= 0) {
 			this.posY += 1;
+			this.vel *= -1;
 		}
 		
 	}
