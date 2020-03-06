@@ -1,7 +1,5 @@
 package Model;
 
-
-
 import static processing.core.PConstants.ENTER;
 import static processing.core.PConstants.LEFT;
 import static processing.core.PConstants.RIGHT;
@@ -16,6 +14,7 @@ public class Heroe {
 	int posY;
 	int tam;
 	int vel;
+	int vida;
 	PApplet app;
 	
 	ArrayList<Bala> balas;
@@ -23,9 +22,10 @@ public class Heroe {
 	public Heroe(int posX, int posY, PApplet app) {
 		this.posX = posX;
 		this.posY = posY;
-		this.tam = 25;
-		this.vel = 10;
+		this.tam = 20;
+		this.vel = 20;
 		this.app = app;
+		this.vida = 3;
 		balas = new ArrayList<>();
 	}
 	
@@ -64,17 +64,11 @@ public class Heroe {
 			disparar();
 		}
 	}
-	public void setBalas(ArrayList<Bala>balas) {
-		this.balas = balas;
-	}
-	public ArrayList<Bala> getBalas() {
-		return balas;
-	}
-
+	
+	
 	public void disparar() {
-		Bala b = new Bala(this.posX, this.posY,app);
+		Bala b = new Bala(this.posX + 35, this.posY,app);
 		balas.add(b);
-		System.out.println(balas.size());
 	}
 
 	
@@ -118,6 +112,24 @@ public class Heroe {
 	public void setApp(PApplet app) {
 		this.app = app;
 	}
+	
+	public void setBalas(ArrayList<Bala>balas) {
+		this.balas = balas;
+	}
+	
+	public ArrayList<Bala> getBalas() {
+		return balas;
+	}
+
+	public int getVida() {
+		return vida;
+	}
+
+	public void setVida(int vida) {
+		this.vida = vida;
+	}
+
+
 	
 
 }

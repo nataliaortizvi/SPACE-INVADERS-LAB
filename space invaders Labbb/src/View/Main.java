@@ -5,7 +5,7 @@ import processing.core.PApplet;
 
 public class Main extends PApplet {
 	
-	Juego game;
+	Screen2View start;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -17,23 +17,23 @@ public class Main extends PApplet {
 	}
 	
 	public void setup () {
-		game = new Juego(this);
+		start = new Screen2View(this);
 		
 	}
 	
 	public void draw () {
 	background(120,180,350);
-	game.ejecutar();
+	start.inicioJuego();
 	
 	}
 	
 	public void mousePressed() {
-	game.mouse();
+	start.inicioRaton();
 		
 	}
 	
 	public void keyPressed() {
-	game.key();
+	start.inicioTecla();
 	}
 		
 }

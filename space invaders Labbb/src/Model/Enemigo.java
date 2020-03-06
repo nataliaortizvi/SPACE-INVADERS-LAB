@@ -13,29 +13,29 @@ public class Enemigo {
 		this.posX = posX;
 		this.posY = posY;
 		this.tam = 50;
-		this.vel = 5;
+		this.vel = 8;
 		this.app = app;
 	}
 	
 	public void pintar() {
-		app.fill(35,100,330);
-		app.rect(this.posX, this.posY, this.tam, this.tam);
+		app.fill(235,100,330);
+		app.rect(this.posX, this.posY, this.tam, this.tam-30);
 	}
 	
 	public void mover() {
 		this.posX += this.vel;
 		
-		if(this.posX >= 650) {
-			this.posY += 1;
+		if(this.posX >= 670) {
+			this.posY += 90;
 			this.vel *= -1;
 		}else if(this.posX <= 0) {
-			this.posY += 1;
+			this.posY += 90;
 			this.vel *= -1;
-		}
+			}
 		
-	}
-	
-	
+		
+			
+		}
 	//getters y setters
 	public int getPosX() {
 		return posX;

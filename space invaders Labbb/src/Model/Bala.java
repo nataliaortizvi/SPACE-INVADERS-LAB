@@ -12,7 +12,7 @@ public class Bala {
 	public Bala(int x, int y, PApplet app) {
 		this.x = x;
 		this.y = y;
-		this.tam = 50;
+		this.tam = 20;
 		this.vel = 5;
 		this.app = app;
 	}

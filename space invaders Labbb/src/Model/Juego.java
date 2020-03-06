@@ -22,13 +22,12 @@ public class Juego {
 		h = new Heroe(350,640,app);
 		enemigos = new ArrayList<>();
 		
-		//se recorre el arrelgo de enemigos para crear bastantes
-		for(int i = 0; i<enemigos.size(); i++) {
-			enemigos.get(i).pintar();
-			enemigos.get(i).mover();
-		
-			enemigos.add (new Enemigo(5,50,app));
-			}	
+		//se recorre el arreglo de enemigos para crear bastantes
+		for(int i = 0; i< 12; i++) {
+			enemigos.add(new Enemigo(70 * i,50,app));
+			//enemigos.add(new Enemigo(70 * i, 80, app));
+			///enemigos.add(new Enemigo(70 * i, 110, app));
+		}	
 	}
 	
 	public void ejecutar() {
@@ -40,14 +39,38 @@ public class Juego {
 			break;
 		case 1:
 			//pantalla de juego
-			app.background(240,30,123);
+			app.background(0);
 			
 			h.pintar();
 			
 			for (int i = 0; i < enemigos.size(); i++) {
 			enemigos.get(i).pintar();
 			enemigos.get(i).mover();
+			
+			System.out.println(enemigos.get(i).getPosY());
+			
+			if(enemigos.get(i).getPosY() > 43000) {
+				screen = 2;
 			}
+			
+	
+			//System.out.println(enemigos.size());
+
+			}
+			
+			for (int i = 0; i < h.getBalas().size(); i++) {
+				for (int j = 0; j < enemigos.size(); j++) {
+					if(PApplet.dist(h.getBalas().get(i).getX(), h.getBalas().get(i).getY(), enemigos.get(j).getPosX()+25,
+						enemigos.get(j).getPosY())<25) {
+						
+						enemigos.remove(j);
+						//h.getBalas().get(i).splice(1,i);	
+						h.getBalas().get(i).setX(5000);
+					}
+				}
+			}
+			
+			
 			
 			break;
 		case 2:
@@ -73,6 +96,14 @@ public class Juego {
 	
 	public void key() {
 		h.keyPressed();
+	}
+
+	public int getScreen() {
+		return screen;
+	}
+
+	public void setScreen(int screen) {
+		this.screen = screen;
 	}
 	
 	
